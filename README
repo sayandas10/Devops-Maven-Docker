@@ -27,6 +27,11 @@ mvn package
 
 check the outputs in target directory structure and war file with name devops.war
 
+delete all previous docker containers
+docker rm -f `docker ps -aq`
+or
+docker rm -f $(docker ps -a -q)
+
 build the docker image with docker build command ( you can see dockerfile in present working directory)
 docker build -t image-name:version .
 
